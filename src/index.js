@@ -1,16 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import MyHeader from "./MyHeader.js";
+import MyFooter from "./MyFooter.js";
+import MyDataTable from "./MyDataTable.js";
+import orgList from "./orgList.json";
+import orgHeaders from "./orgHeaders.json";
 
 import "./styles.css";
 
 function App() {
   return (
-		  <div className="App">
-			  <h1>Organization Web</h1>
-			  <h2>Hi tom TAIWAN NUMBA 666</h2>
-			  <h3>this is a test with MA own sandbox</h3>
-		  </div>
-  		);
-  }
+    <>
+      <MyHeader />
+
+      <MyDataTable data={orgList} columnNames={orgHeaders} />
+      <MyFooter />
+    </>
+  );
+}
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
